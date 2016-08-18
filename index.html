@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HTML Extension Specifications</title>
+
+<script class='remove'>
+function addEllipsis(id) {
+document.getElementById(id).childNodes.item(2).textContent = "\n    â€¦\n";
+}
+function removeNodes(nodesToRemove) {
+var i, j;
+for (i = 0; i < nodesToRemove.length; ++i) {
+for (j = 0; j < nodesToRemove[i].length; ++j) {
+nodesToRemove[i][j].parentNode.removeChild(nodesToRemove[i][j]);
+}
+}
+}
+</script>
+<script type="text/javascript" src='https://www.w3.org/Tools/respec/respec-w3c-common' class='remove'></script>
+<script type="text/javascript" class='remove'>
+var respecConfig = {
+specStatus: "ED",
+shortName:  "HTML Extensions",
+edDraftURI: "http://w3c.github.io/html-extensions/",
+noRecTrack: "false",
+editors: [
+{   name:       "Léonie Watson",
+company:    "The Paciello Group",
+mailto:     "lwatson@paciellogroup.com",
+w3cid: "35007"
+},
+],
+extraCSS: [ "http://dev.w3.org/2009/dap/ReSpec.js/css/respec.css" ],
+wg:           "Web Platform Working Group",
+wgURI:        "https://www.w3.org/WebPlatform/WG/",
+wgPublicList: "public-html",
+wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/83482/status",
+
+after: function () {
+var nodesToRemove = [
+document.querySelectorAll("table.parameters"),
+document.querySelectorAll("li.tocline > a[href^='#attributes']"),
+document.querySelectorAll("li.tocline > a[href^='#methods']"),
+];
+addEllipsis('idl-def-HTMLElement');
+removeNodes(nodesToRemove);
+}
+};
+</script>
+<style>
+table {
+border-collapse: collapse;
+border: 1px solid #630;
+font: normal 95% arial, Verdana, helvetica, sans-serif;
+}
+
+caption {font-weight: bold}
+
+th, td {
+text-align: left;
+vertical-align: top;
+padding: 0.3em;
+border: 1px solid #630;
+}
+
+td h1 {font-size:85%;margin:0 0 0 0;}
+td p {margin:5px 2px 5px 2px;}
+thead th {
+font-weight: bold;
+text-align: center;
+}
+
+/*td span {border: 2px solid #9acd32;display:inline-block;padding:2px;}
+span:focus {background:#f5f5f5;border: 2px solid #a0522d;}
+td:focus {background:#f5f5f5;border: 2px solid #a0522d;}*/
+caption {text-align:left}
+
+.support {color:#090;font-size:1.2em }
+.partial {color:#939393;font-size:1.2em }
+.nosupport{color:#F00;font-size:1.2em }
+
+div.example{border: 1px dashed #b8860b;padding: 5px;margin-top:5px;background:#FFFFFF}
+
+sup {font-size: 80%}
+td ul {padding-left:4px;list-style-type:none}
+img {border:none}
+code.block {color:#BF3400;padding: 10px;display:block;background:#EBEBEB;min-width:20em;max-width:48em;}
+code.blockat {color:#BF3400;padding: 10px;display:block;background:#FFFFD0;min-width:20em;max-width:48em;}
+mark {background-color:#FF9}
+div, section, hr {margin-top:10px}
+code {color:#BF3400 !important;}
+
+.example {margin-left:30px;}
+</style>
+</head>
+
+<body>
+<section id='abstract'>
+<p role="contentinfo">
+This document provides a reference to all HTML extension specifications. An <a href="https://www.w3.org/TR/html51/infrastructure.html#applicable-specification">applicable extension specification</a> may define a new feature, prohibit certain (otherwise conforming) features, or may change the semantics, DOM mappings or other processing rules for features defined in the <a href="https://www.w3.org/TR/html51/">HTML specification</a>.</p>
+</section>
+
+<section id='sotd'>
+<p>This document is a NOTE made available by the <a href="https://www.w3.org/WebPlatform/WG/">Web Platform Working Group</a>.</p>
+<p>It is maintained on <a href="https://github.com/w3c/html-extensions/Github</a>. If you find a problem or want to make a suggestion, please <a href="https://github.com/w3c/html-extensions/">file an issue</a>.</p>
+</section>
+
+<div><hr></div>
+
+<section tabindex="-1" id="intro">
+<h2>Introduction</h2>
+<p>TBD</p>
+</section>
+
+<section role="main">
+<h2 tabindex="-1" id="notes2">HTML extension specifications</h2>
+
+<p>TBD</p>
+
+</section>
+
+</body>
+</html>
