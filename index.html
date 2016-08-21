@@ -111,33 +111,85 @@ This document provides a reference to all HTML extension specifications. An <a h
 <section tabindex="-1" id="intro">
 <h2>Introduction</h2>
 <p>TBD</p>
+<p>The specifications included in this W3C Note extend the <a href="https://www.w3.org/TR/html51/">HTML specification</a>. Each specification is on the W3C Recommendation Track in its own right.</p>
 </section>
 
 <section role="main">
 <h2 tabindex="-1" id="notes2">HTML extension specifications</h2>
 
+<!-- ARIA in HTML -->
 <section>
-<h3><a href="https://www.w3.org/TR/preload/">Preload</a></h3>
-<p>This specification defines the <code>preload</code> keyword that may be used with <code>link</code> elements. This keyword provides a declarative fetch primitive that initiates an early fetch and separates fetching from resource execution.</p>
+<h3><a href="https://www.w3.org/TR/html-aria/">ARIA in HTML</a></h3>
+<p>This specification defines the web developer rules (author conformance requirements) for the use of [wai-aria-1.1] attributes on [HTML51] elements. It also defines requirements for Conformance Checking tools.</p>
 </section>
 
+<!-- Content Security Policy -->
 <section>
-<h3><a href="https://www.w3.org/TR/resource-hints/">Resource Hints</a></h3>
-<p>This specification defines the <code>dns-prefetch</code>, <code>preconnect</code>, <code>prefetch</code>, and <code>prerender</code> relationships of the HTML <code>Link</code> Element (<code>&lt;link&gt;</code>). These primitives enable the developer, and the server generating or delivering the resources, to assist the user agent in the decision process of which origins it should connect to, and which resources it should fetch and preprocess to improve page performance.</p>
+<h3><a href="https://www.w3.org/TR/CSP3/">Content Security Policy Level 3</a></h3>
+<p>This document defines a mechanism by which web developers can control the resources which a particular page can fetch or execute, as well as a number of security-relevant policy decisions.</p>
 </section>
 
+<!-- CSS Style Attributes -->
+<section>
+<h3><a href="https://www.w3.org/TR/css-style-attr/">CSS Style Attributes</a></h3>
+<p>Markup languages such as HTML and SVG provide a <code>style</code> attribute on most elements, to hold inline style information that applies to those elements. This draft describes the syntax and interpretation of the CSS fragment that can be used in such style attributes.</p>
+</section>
+
+<!-- HTTP Client Hints -->
+<section>
+<h3><a href="http://httpwg.org/http-extensions/client-hints.html#accept-ch">HTTP Client Hints</a></h3>
+<p>This document defines a set of new request header fields that allow the client to perform proactive content negotiation (Section 3.4.1 of [RFC7231])
+by indicating a list of device and agent specific preferences, through a mechanism similar to the Accept header field which is used to indicate preferred response formats.</p>
+</section>
+
+<!-- HTML Media Capture -->
+<section>
+<h3><a href="https://www.w3.org/TR/html-media-capture/">HTML Media Capture</a></h3>
+<p>The HTML Media Capture specification defines an HTML form extension that facilitates user access to a device's media capture mechanism, such as a camera, or microphone, from within a file upload control.</p>
+</section>
+
+<!-- Image Description (longdesc) -->
 <section>
 <h3><a href="https://www.w3.org/TR/html-longdesc/">Image Description (longdesc)</a></h3>
 <p>This specification defines a <code>longdesc</code> attribute (based on the longdesc attribute of HTML 4) to link descriptions to images in HTML5 content.</p>
 </section>
 
+<!-- Preload -->
+<section>
+<h3><a href="https://www.w3.org/TR/preload/">Preload</a></h3>
+<p>This specification defines the <code>preload</code> keyword that may be used with <code>link</code> elements. This keyword provides a declarative fetch primitive that initiates an early fetch and separates fetching from resource execution.</p>
+</section>
+
+<!-- Presentation API -->
+<section>
+<h3><a href="https://www.w3.org/TR/presentation-api/">Presentation API</a></h3>
+<p>This specification defines an API to enable web content to access external presentation-type displays and use them for presenting web content.</p>
+</section>
+
+<! -- Public Identifiers for Integrity Resolution in xHTML -->
 <section>
 <h3><a href="https://www.w3.org/2003/entities/2007doc/xhtml-pubid.html">Public Identifiers for Entity Resolution in xHTML</a></h3>
 <p>This document adds an additional public identifier that should be recognised by XHTML user agents and cause the HTML character entity definitions to be loaded. Unlike the identifiers already listed by the HTML5 specification, the identifier added by this extension references the set of definitions that is used by HTML.</p>
 </section>
 
-<p>TBD</p>
+<!-- Referrer Policy -->
+<section>
+<h3><a href="https://www.w3.org/TR/referrer-policy/">Referrer Policy</a></h3>
+<p>This document describes how an author can set a referrer policy for documents they create, and the impact of such a policy on the Referer HTTP header for
+outgoing requests and navigations.</p>
+</section>
 
+<!-- Resource Hints -->
+<section>
+<h3><a href="https://www.w3.org/TR/resource-hints/">Resource Hints</a></h3>
+<p>This specification defines the <code>dns-prefetch</code>, <code>preconnect</code>, <code>prefetch</code>, and <code>prerender</code> relationships of the HTML <code>Link</code> Element (<code>&lt;link&gt;</code>). These primitives enable the developer, and the server generating or delivering the resources, to assist the user agent in the decision process of which origins it should connect to, and which resources it should fetch and preprocess to improve page performance.</p>
+</section>
+
+<!-- Subresource Integrity -->
+<section>
+<h3><a href="https://www.w3.org/TR/SRI/">Subresource Integrity</a></h3>
+<p>This specification defines a mechanism by which user agents may verify that a fetched resource has been delivered without unexpected manipulation.</p>
+</section>
 </section>
 
 </body>
