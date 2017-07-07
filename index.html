@@ -40,7 +40,7 @@ w3cid: "6222"
 extraCSS: [ "http://dev.w3.org/2009/dap/ReSpec.js/css/respec.css" ],
 wg:           "Web Platform Working Group",
 wgURI:        "https://www.w3.org/WebPlatform/WG/",
-wgPublicList: "public-html",
+// wgPublicList: "public-html",
 wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/83482/status",
 
 after: function () {
@@ -105,19 +105,14 @@ code {color:#BF3400 !important;}
 
 <body>
 <section id='abstract'>
-<p>
-This document provides a reference to all HTML extension specifications.
-Those specifications extend the HTML markup language by introducing
-new HTML elements, attributes, or attribute value. 
-An <a href="https://www.w3.org/TR/html51/infrastructure.html#applicable-specification">applicable 
-extension specification</a>
-may define a new feature, prohibit certain otherwise conforming features, or may change
-the semantics, DOM mappings or other processing rules for features defined in the 
-<a href="https://www.w3.org/TR/html/">HTML specification</a>.</p>
+<p>These
+<a href="https://www.w3.org/TR/html51/infrastructure.html#applicable-specification">applicable extension specifications</a>
+change conformance for <a href="https://www.w3.org/TR/html/">HTML</a>.
+They introduce or change the processing requirements of elements, attributes, attribute values, or interface APIs.</p>
 </section>
 
 <section id='sotd'>
-<p>It is maintained on <a href="https://github.com/w3c/html-extensions/">Github</a>. 
+<p>This document is proposed as the basis for a Working Group Note. It is maintained on <a href="https://github.com/w3c/html-extensions/">Github</a>. 
 If you find a problem or want to make a suggestion, please 
 <a href="https://github.com/w3c/html-extensions/">file an issue</a>.</p>
 </section>
@@ -126,9 +121,7 @@ If you find a problem or want to make a suggestion, please
 
 <section tabindex="-1" id="intro">
 <h2>Introduction</h2>
-<p>The specifications included in this W3C Note extend the 
-<a href="https://www.w3.org/TR/html/">HTML specification</a>. 
-Each specification is on the W3C Recommendation Track in its own right.</p>
+<p>The specifications listed here extend the <a href="https://www.w3.org/TR/html/">HTML specification</a>.</p>
 </section>
 
 <section role="main">
@@ -153,7 +146,7 @@ HTML 4) to link descriptions to images in HTML content.</p>
 <!-- Pointer events -->
 <section>
 <h3><a href="https://www.w3.org/TR/REC-pointerevents-20150224/">Pointer Events</a></h3>
-<p>This specification defines various pointer events analagous to mouse events,
+<p>This specification defines a number of pointer events, analagous to mouse events,
  and extends the <code>Element</code>, <code>GlobalEventHandlers</code> and <code>Navigator</code>
 interfaces of HTML.</p>
 </section>
@@ -181,7 +174,10 @@ interfaces of HTML.</p>
 <section>
 <h3><a href="https://www.w3.org/TR/SRI/">Subresource Integrity</a></h3>
 <p>This specification defines a mechanism by which user agents may verify that a fetched resource
-has been delivered without unexpected manipulation.</p>
+ has been delivered without unexpected manipulation. It adds the <code>integrity</code> attribute
+ for <code>link</code> elements whose <code>rel</code> attribute value inclues <var>stylsheet</var>,
+ and for <code>script</code> elements, and extends the <code>HTMLLinkElement</code> and
+ <code>HTMLScriptElement</code> interfaces.</p>
 </section>
  
  
@@ -234,6 +230,16 @@ and separates fetching from resource execution.</p>
 and use them for presenting web content.</p>
 </section>
 
+<! -- Public Identifiers for Integrity Resolution in xHTML -->
+<section>
+<h3><a href="https://www.w3.org/TR/xhtml-pubid/">Public Identifiers for 
+Entity Resolution in XHTML</a></h3>
+<p>This document adds an additional public identifier that should be recognised by XHTML user agents
+and cause the HTML character entity definitions to be loaded. 
+Unlike the identifiers already listed by the HTML5 specification, 
+the identifier added by this extension references the set of definitions that is used by HTML.</p>
+</section>
+
 <!-- Referrer Policy -->
 <section>
 <h3><a href="https://www.w3.org/TR/referrer-policy/">Referrer Policy</a></h3>
@@ -264,16 +270,6 @@ to perform proactive content negotiation (Section 3.4.1 of [RFC7231])
 by indicating a list of device and agent specific preferences, 
 through a mechanism similar to the Accept header field which is used to indicate preferred response 
 formats.</p>
-</section>
-
-<! -- Public Identifiers for Integrity Resolution in xHTML -->
-<section>
-<h3><a href="https://www.w3.org/2003/entities/2007doc/xhtml-pubid.html">Public Identifiers for 
-Entity Resolution in xHTML</a></h3>
-<p>This document adds an additional public identifier that should be recognised by XHTML user agents
-and cause the HTML character entity definitions to be loaded. 
-Unlike the identifiers already listed by the HTML5 specification, 
-the identifier added by this extension references the set of definitions that is used by HTML.</p>
 </section>
 
 </section>
