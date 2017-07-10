@@ -136,14 +136,14 @@ If you find a problem or want to make a suggestion, please
 <p>Markup languages such as HTML and SVG provide a <code>style</code> attribute on most elements, 
 to hold inline style information that applies to those elements. 
 This draft describes the syntax and interpretation of the CSS fragment
- that can be used in such style attributes.</p>
+ that can be used in such style attributes. [[css-style-attr]]</p>
 </section>
 
-<!-- Image Description (longdesc) -->
+<!-- Image Description (<code>longdesc</code>) -->
 <section>
-<h3><a href="https://www.w3.org/TR/html-longdesc/">Image Description (longdesc)</a></h3>
-<p>This specification defines a <code>longdesc</code> attribute (based on the longdesc attribute of 
-HTML 4) to link descriptions to images in HTML content.</p>
+<h3><a href="https://www.w3.org/TR/html-longdesc/">Image Description (<code>longdesc</code>)</a></h3>
+<p>This specification defines a <code>longdesc</code> attribute (based on the <code>longdesc</code> attribute of 
+HTML 4) to link descriptions to images in HTML content. [[html-longdesc]]</p>
 </section>
   
 <!-- Pointer events -->
@@ -151,7 +151,7 @@ HTML 4) to link descriptions to images in HTML content.</p>
 <h3><a href="https://www.w3.org/TR/pointerevents/">Pointer Events</a></h3>
 <p>This specification defines a unified event model to handle mouse, touch and stylus input.
 It builds on mouse events, and extends the <code>Element</code>, <code>GlobalEventHandlers</code>
-and <code>Navigator</code> interfaces of HTML.</p>
+and <code>Navigator</code> interfaces of HTML. [[pointerevents]]</p>
 </section>
   
 <!-- RDFa -->
@@ -187,7 +187,7 @@ and <code>Navigator</code> interfaces of HTML.</p>
 <section>
 <h3><a href="https://www.w3.org/TR/webmention/">Webmention</a></h3>
 <p>This specification defines a mechanism to notify a URL that it has been mentioned.
-It adds the <code>webmention</code> value for the <code>rel</code> attribute of links.</p>
+It adds the <code>webmention</code> value for the <code>rel</code> attribute of links. [[webmention]]</p>
 </section>
  
  </section>
@@ -245,7 +245,7 @@ It adds the <code>webmention</code> value for the <code>rel</code> attribute of 
 <li><code>aria-valuenow</code></li>
 <li><code>aria-valuetext</code></li>
  </ul></details>
- from [[wai-aria-1.1]] on HTML elements.</p>
+ from [[wai-aria-1.1]] on HTML elements. [[html-aria]]</p>
 </section>
 
 <!-- Content Security Policy -->
@@ -256,7 +256,7 @@ as well as a number of security-relevant policy decisions.
  It introduces an HTTP header <code>Content-Security-Policy</code> which can be used as a value for
  the <code>meta</code> element's <code>http-equiv</code> attribute, along with parameters to be used in
  the corresponding <code>content</code> attribute, that effect navigation and the use of resources
- external to the page.</p>
+ external to the page. [[CSP3]]</p>
 </section>
 
 
@@ -265,14 +265,14 @@ as well as a number of security-relevant policy decisions.
 <h3><a href="https://www.w3.org/TR/html-media-capture/">HTML Media Capture</a></h3>
 <p>The HTML Media Capture specification defines an HTML form extension that
 facilitates user access to a device's media capture mechanism, such as a camera, or microphone,
-from within a file upload control.</p>
+from within a file upload control. [[html-media-capture]]</p>
 </section>
 
 <!-- Microdata -->  
 <section>
   <h3><a href="https://www.w3.org/TR/microdata/">Microdata</a></h3>
   <p>This specification defines several global attributes for HTML, to add machine-parseable semantics
-    to HTML content, in a similar way to RDFa but with less power and expressivity.</p>
+    to HTML content, in a similar way to RDFa but with less power and expressivity. [[microdata]]</p>
 </section>
 
 <!-- Preload -->
@@ -280,14 +280,14 @@ from within a file upload control.</p>
 <h3><a href="https://www.w3.org/TR/preload/">Preload</a></h3>
 <p>This specification defines a <code>preload</code> keyword as a value of the <code>rel</code> attribute 
 for links. The keyword provides a declarative fetch primitive that initiates an early fetch
-and separates fetching from resource execution.</p>
+and separates fetching from resource execution. [[preload]]</p>
 </section>
 
 <!-- Presentation API -->
 <section>
 <h3><a href="https://www.w3.org/TR/presentation-api/">Presentation API</a></h3>
 <p>This specification defines an API to enable web content to access external presentation-type displays
- and use them for presenting web content. It extends the <code>Navigator</code> interface.</p>
+ and use them for presenting web content. It extends the <code>Navigator</code> interface. [[presentation-api]]</p>
 </section>
 
 <! -- Public Identifiers for Integrity Resolution in xHTML -->
@@ -299,14 +299,14 @@ Entity Resolution in XHTML</a></h3>
 <p>This document adds the additional public identifier
  <code>-//W3C//ENTITIES HTML MathML Set//EN//XML</code> for XHTML user agents,
 and causes the HTML character entity definitions to be loaded by explicitly referencing
-the set of definitions that is used by HTML.</p>
+the set of definitions that is used by HTML. [[xhtml-pubid]]</p>
 </section>
 
 <!-- Referrer Policy -->
 <section>
 <h3><a href="https://www.w3.org/TR/referrer-policy/">Referrer Policy</a></h3>
 <p>This document describes how an author can set a referrer policy for documents they create,
-and the impact of such a policy on the Referer HTTP header for outgoing requests and navigations.</p>
+and the impact of such a policy on the Referer HTTP header for outgoing requests and navigations. [[referrer-policy]]</p>
 </section>
 
 <!-- Resource Hints -->
@@ -317,7 +317,7 @@ and <code>prerender</code> values of the <code>rel</code> attribute for links
 (<code>&lt;link&gt;</code>).
 These primitives enable the developer, and the server generating or delivering the resources,
 to assist the user agent decide which origins it should connect to,
-and which resources it should fetch and preprocess to improve page performance.</p>
+and which resources it should fetch and preprocess to improve page performance. [[resource-hints]]</p>
 </section>
 </section>
 
@@ -326,14 +326,12 @@ and which resources it should fetch and preprocess to improve page performance.<
  
 <!-- HTTP Client Hints -->
 <section>
-<h3><a href="http://httpwg.org/http-extensions/client-hints.html#accept-ch">HTTP Client 
-Hints</a></h3>
+<h3><a href="http://httpwg.org/http-extensions/client-hints.html#accept-ch">HTTP Client Hints</a> (IETF)</h3>
 <p>This experimental HTTP extension defines a set of new request header fields that allow the client
-to perform proactive content negotiation (Section 3.4.1 of [RFC7231])
+to perform proactive content negotiation (per Section 3.4.1 of [[RFC7231]])
 by indicating a list of device and agent specific preferences, 
-through a mechanism similar to the Accept header field which is used to indicate preferred response 
-formats.</p>
-<p>It extends HTML by allowing the values to be used in a <code>&lt;meta http-equiv=…</code> element</p>
+through a mechanism similar to the Accept header field which is used to indicate preferred response formats.
+It extends HTML by allowing the values to be used in a <code>&lt;meta http-equiv=…</code> element.</p>
 
   </section>
 
