@@ -102,7 +102,9 @@ code {color:#BF3400 !important;}
 .example {margin-left:30px;}
 </style>
  <style>
-  details {display:inline}
+  details, summary, .inline {display:inline-block !important}
+  details[open] {display: block !important}
+  details[open] summary {display: inline-block !important}
  </style>
 </head>
 
@@ -144,6 +146,65 @@ This draft describes the syntax and interpretation of the CSS fragment
 <h3><a href="https://www.w3.org/TR/html-longdesc/">Image Description (<code>longdesc</code>)</a></h3>
 <p>This specification defines a <code>longdesc</code> attribute (based on the <code>longdesc</code> attribute of 
 HTML 4) to link descriptions to images in HTML content. [[html-longdesc]]</p>
+</section>
+  
+<!-- ITS  -->
+<section>
+<h3><a href="https://www.w3.org/TR/its20/">Internationalization Tag Set</a></h3>
+<div>
+<p class="inline">This specification defines </p>
+
+<details>
+ <summary>The various <code>its-</code>* attributes</summary>
+ <ul>
+<li><code>its-allowed-characters</code></li>
+<li><code>its-line-break-type</code></li>
+<li><code>its-loc-note</code></li>
+<li><code>its-loc-note-ref</code></li>
+<li><code>its-loc-note-type</code></li>
+<li><code>its-loc-quality-issue-comment</code></li>
+<li><code>its-loc-quality-issue-enabled</code></li>
+<li><code>its-loc-quality-issue-profile-ref</code></li>
+<li><code>its-loc-quality-issue-severity</code></li>
+<li><code>its-loc-quality-issue-type</code></li>
+<li><code>its-loc-quality-issues-ref</code></li>
+<li><code>its-loc-quality-rating-profile-ref</code></li>
+<li><code>its-loc-quality-rating-score</code></li>
+<li><code>its-loc-quality-rating-score-threshold</code></li>
+<li><code>its-loc-quality-rating-vote</code></li>
+<li><code>its-loc-quality-rating-vote-threshold</code></li>
+<li><code>its-locale-filter-list</code></li>
+<li><code>its-mt-confidence</code></li>
+<li><code>its-org</code></li>
+<li><code>its-org-ref</code></li>
+<li><code>its-person</code></li>
+<li><code>its-person-ref</code></li>
+<li><code>its-prov-ref</code></li>
+<li><code>its-provenance-records-ref</code></li>
+<li><code>its-rev-org</code></li>
+<li><code>its-rev-org-ref</code></li>
+<li><code>its-rev-person</code></li>
+<li><code>its-rev-person-ref</code></li>
+<li><code>its-rev-tool</code></li>
+<li><code>its-rev-tool-ref</code></li>
+<li><code>its-storage-encoding</code></li>
+<li><code>its-storage-size</code></li>
+<li><code>its-ta-class-ref</code></li>
+<li><code>its-ta-confidence</code></li>
+<li><code>its-ta-ident</code></li>
+<li><code>its-ta-ident-ref</code></li>
+<li><code>its-ta-source</code></li>
+<li><code>its-term</code></li>
+<li><code>its-term-confidence</code></li>
+<li><code>its-term-info-ref</code></li>
+<li><code>its-tool</code></li>
+<li><code>its-tool-ref</code></li>
+<li><code>its-within-text</code></li>
+ </ul>
+</details>
+
+<p class="inline"> to support automated creation and processing of multilingual Web content. [[its20]]</p>
+</div>
 </section>
   
 <!-- Pointer events -->
@@ -199,8 +260,10 @@ It adds the <code>webmention</code> value for the <code>rel</code> attribute of 
 <!-- ARIA in HTML -->
 <section>
 <h3><a href="https://www.w3.org/TR/html-aria/">ARIA in HTML</a></h3>
-<p>This specification defines conformance requirements for the use of the
- <code>role</code> and <details>
+<div>
+<p class="inline">This specification defines conformance requirements for the use of the
+ <code>role</code> and </p>
+<details>
  <summary>The various <code>aria-</code>* attributes</summary>
  <ul>
 <li><code>aria-activedescendant</code></li>
@@ -245,7 +308,8 @@ It adds the <code>webmention</code> value for the <code>rel</code> attribute of 
 <li><code>aria-valuenow</code></li>
 <li><code>aria-valuetext</code></li>
  </ul></details>
- from [[wai-aria-1.1]] on HTML elements. [[html-aria]]</p>
+<p class="inline"> from [[wai-aria-1.1]] on HTML elements. [[html-aria]]</p>
+</div>
 </section>
 
 <!-- Beacon API -->
