@@ -1,4 +1,4 @@
-# HTML Extension Specifications
+# HTML Extension Specifications (DISCONTINUED)
 
-This W3C Notes provides a reference to all HTML Extension Specifications. The Note is available here:
-http://w3c.github.io/html-extensions/
+This document is discontinued. Please consult the HTML commit history instead:
+https://github.com/whatwg/html/commits/master
