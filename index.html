@@ -1,433 +1,48 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<title>HTML Extension Specifications</title>
+  <head>
+    <meta charset="utf-8" />
+    <title>HTML Extension Specifications</title>
 
-<script class='remove'>
-function addEllipsis(id) {
-document.getElementById(id).childNodes.item(2).textContent = "\n    â€¦\n";
-}
-function removeNodes(nodesToRemove) {
-var i, j;
-for (i = 0; i < nodesToRemove.length; ++i) {
-for (j = 0; j < nodesToRemove[i].length; ++j) {
-nodesToRemove[i][j].parentNode.removeChild(nodesToRemove[i][j]);
-}
-}
-}
-</script>
-<script type="text/javascript" src='https://www.w3.org/Tools/respec/respec-w3c-common' 
-class='remove'></script>
-<script type="text/javascript" class='remove'>
-var respecConfig = {
-specStatus: "ED",
-shortName:  "HTML Extensions",
-edDraftURI: "https://w3c.github.io/html-extensions/",
-noRecTrack: "false",
-editors: [
-{   name:      "Chaals McCathie Nevile (From June 2017)",
-mailto:     "w3b@chaals.com",
-w3cid: "6222"
-},
-{name:       "Léonie Watson (Until May 2017)",
- company:    "The Paciello Group",
- mailto:     "lwatson@paciellogroup.com",
- w3cid: "35007"
-}
-],
-extraCSS: [ "http://dev.w3.org/2009/dap/ReSpec.js/css/respec.css" ],
-wg:           "Web Platform Working Group",
-wgURI:        "https://www.w3.org/WebPlatform/WG/",
-// wgPublicList: "public-html",
-wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/83482/status",
+    <script
+      type="text/javascript"
+      src="https://www.w3.org/Tools/respec/respec-w3c"
+      class="remove"
+    ></script>
+    <script type="text/javascript" class="remove">
+      var respecConfig = {
+        specStatus: "unofficial",
+        shortName: "HTML Extensions",
+        noRecTrack: "false",
+        editors: [
+          {
+            name: "Chaals McCathie Nevile (From June 2017)",
+            mailto: "w3b@chaals.com",
+            w3cid: "6222",
+          },
+          {
+            name: "Léonie Watson (Until May 2017)",
+            company: "The Paciello Group",
+            mailto: "lwatson@paciellogroup.com",
+            w3cid: "35007",
+          },
+        ],
+      };
+    </script>
+  </head>
 
-after: function () {
-var nodesToRemove = [
-document.querySelectorAll("table.parameters"),
-document.querySelectorAll("li.tocline > a[href^='#attributes']"),
-document.querySelectorAll("li.tocline > a[href^='#methods']"),
-];
-addEllipsis('idl-def-HTMLElement');
-removeNodes(nodesToRemove);
-}
-};
-</script>
-<style>
-table {
-border-collapse: collapse;
-border: 1px solid #630;
-font: normal 95% arial, Verdana, helvetica, sans-serif;
-}
-
-caption {font-weight: bold}
-
-th, td {
-text-align: left;
-vertical-align: top;
-padding: 0.3em;
-border: 1px solid #630;
-}
-
-td h1 {font-size:85%;margin:0 0 0 0;}
-td p {margin:5px 2px 5px 2px;}
-thead th {
-font-weight: bold;
-text-align: center;
-}
-
-/*td span {border: 2px solid #9acd32;display:inline-block;padding:2px;}
-span:focus {background:#f5f5f5;border: 2px solid #a0522d;}
-td:focus {background:#f5f5f5;border: 2px solid #a0522d;}*/
-caption {text-align:left}
-
-.support {color:#090;font-size:1.2em }
-.partial {color:#939393;font-size:1.2em }
-.nosupport{color:#F00;font-size:1.2em }
-
-div.example{border: 1px dashed #b8860b;padding: 5px;margin-top:5px;background:#FFFFFF}
-
-sup {font-size: 80%}
-td ul {padding-left:4px;list-style-type:none}
-img {border:none}
-code.block {color:#BF3400;padding: 
-10px;display:block;background:#EBEBEB;min-width:20em;max-width:48em;}
-code.blockat {color:#BF3400;padding: 
-10px;display:block;background:#FFFFD0;min-width:20em;max-width:48em;}
-mark {background-color:#FF9}
-div, section, hr {margin-top:10px}
-code {color:#BF3400 !important;}
-
-.example {margin-left:30px;}
-</style>
- <style>
-  details, summary, .inline {display:inline-block !important}
-  details[open] {display: block !important}
-  details[open] summary {display: inline-block !important}
- </style>
-</head>
-
-<body>
-<section id='abstract'>
-<p>These
-<a href="https://www.w3.org/TR/html51/infrastructure.html#applicable-specification">applicable extension specifications</a>
-change conformance for <a href="https://www.w3.org/TR/html/">HTML</a>.
-They introduce or change the processing requirements of elements, attributes, attribute values, or interface APIs.</p>
-</section>
-
-<section id='sotd'>
-<p>This document is proposed as the basis for a Working Group Note. It is maintained on <a href="https://github.com/w3c/html-extensions/">Github</a>. 
-If you find a problem or want to make a suggestion, please 
-<a href="https://github.com/w3c/html-extensions/">file an issue</a>.</p>
-</section>
-
-<div><hr></div>
-<section tabindex="-1" id="intro">
-<h2>Introduction</h2>
-<p>The specifications listed here extend the <a href="https://www.w3.org/TR/html/">HTML specification</a>.</p>
-</section>
-
-
-<section role="main">
-<h2 tabindex="-1" id="notes2">W3C Recommendations that extend HTML</h2>
-
-<!-- CSS Style Attributes -->
-<section>
-<h3><a href="https://www.w3.org/TR/css-style-attr/">CSS Style Attributes</a></h3>
-<p>Markup languages such as HTML and SVG provide a <code>style</code> attribute on most elements, 
-to hold inline style information that applies to those elements. 
-This draft describes the syntax and interpretation of the CSS fragment
- that can be used in such style attributes. [[css-style-attr]]</p>
-</section>
-
-<!-- Image Description (<code>longdesc</code>) -->
-<section>
-<h3><a href="https://www.w3.org/TR/html-longdesc/">Image Description (<code>longdesc</code>)</a></h3>
-<p>This specification defines a <code>longdesc</code> attribute (based on the <code>longdesc</code> attribute of 
-HTML 4) to link descriptions to images in HTML content. [[html-longdesc]]</p>
-</section>
-  
-<!-- ITS  -->
-<section>
-<h3><a href="https://www.w3.org/TR/its20/">Internationalization Tag Set</a></h3>
-<div>
-<p class="inline">This specification defines </p>
-
-<details>
- <summary>The various <code>its-</code>* attributes</summary>
- <ul>
-<li><code>its-allowed-characters</code></li>
-<li><code>its-line-break-type</code></li>
-<li><code>its-loc-note</code></li>
-<li><code>its-loc-note-ref</code></li>
-<li><code>its-loc-note-type</code></li>
-<li><code>its-loc-quality-issue-comment</code></li>
-<li><code>its-loc-quality-issue-enabled</code></li>
-<li><code>its-loc-quality-issue-profile-ref</code></li>
-<li><code>its-loc-quality-issue-severity</code></li>
-<li><code>its-loc-quality-issue-type</code></li>
-<li><code>its-loc-quality-issues-ref</code></li>
-<li><code>its-loc-quality-rating-profile-ref</code></li>
-<li><code>its-loc-quality-rating-score</code></li>
-<li><code>its-loc-quality-rating-score-threshold</code></li>
-<li><code>its-loc-quality-rating-vote</code></li>
-<li><code>its-loc-quality-rating-vote-threshold</code></li>
-<li><code>its-locale-filter-list</code></li>
-<li><code>its-mt-confidence</code></li>
-<li><code>its-org</code></li>
-<li><code>its-org-ref</code></li>
-<li><code>its-person</code></li>
-<li><code>its-person-ref</code></li>
-<li><code>its-prov-ref</code></li>
-<li><code>its-provenance-records-ref</code></li>
-<li><code>its-rev-org</code></li>
-<li><code>its-rev-org-ref</code></li>
-<li><code>its-rev-person</code></li>
-<li><code>its-rev-person-ref</code></li>
-<li><code>its-rev-tool</code></li>
-<li><code>its-rev-tool-ref</code></li>
-<li><code>its-storage-encoding</code></li>
-<li><code>its-storage-size</code></li>
-<li><code>its-ta-class-ref</code></li>
-<li><code>its-ta-confidence</code></li>
-<li><code>its-ta-ident</code></li>
-<li><code>its-ta-ident-ref</code></li>
-<li><code>its-ta-source</code></li>
-<li><code>its-term</code></li>
-<li><code>its-term-confidence</code></li>
-<li><code>its-term-info-ref</code></li>
-<li><code>its-tool</code></li>
-<li><code>its-tool-ref</code></li>
-<li><code>its-within-text</code></li>
- </ul>
-</details>
-
-<p class="inline"> to support automated creation and processing of multilingual Web content. [[its20]]</p>
-</div>
-</section>
-  
-<!-- Pointer events -->
-<section>
-<h3><a href="https://www.w3.org/TR/pointerevents/">Pointer Events</a></h3>
-<p>This specification defines a unified event model to handle mouse, touch and stylus input.
-It builds on mouse events, and extends the <code>Element</code>, <code>GlobalEventHandlers</code>
-and <code>Navigator</code> interfaces of HTML. [[pointerevents]]</p>
-</section>
-  
-<!-- RDFa -->
-<section>
-  <h3><a href="https://www.w3.org/TR/rdfa-primer/">RDFa</a></h3>
-  <p>RDFa comprises a family of specifications which specify attributes for XML, SGML, and  HTML-style markup languages,
-    and a processing model that can reliably parse RDFa information to produce RDF </p>
-  <dl>
-    <dt>[[RDFA-PRIMER]]</dt>
-      <dd>An overview of the RDFa family of specifications</dd>
-    <dt>[[RDFA-CORE]]</dt>
-      <dd>Formal processing and syntax rules for RDFa</dd>
-    <dt>[[HTML-RDFA]]</dt>
-      <dd>HTML-specific rules and syntax for RDFa</dd>
-    <dt>[[XHTML-RDFA]]</dt>
-      <dd>XHTML-specific rules and syntax for RDFa</dd>
-    <dt>[[RDFA-LITE]]</dt>
-      <dd>A minimal subset of RDFa, of similar size to [[microdata]]</dd>
-  </dl>
-</section>
-
-<!-- Subresource Integrity -->
-<section>
-<h3><a href="https://www.w3.org/TR/SRI/">Subresource Integrity</a></h3>
-<p>This specification defines a mechanism by which user agents may verify that a fetched resource
- has been delivered without unexpected manipulation. It adds the <code>integrity</code> attribute
- for <code>link</code> elements whose <code>rel</code> attribute value inclues <var>stylsheet</var>,
- and for <code>script</code> elements, and extends the <code>HTMLLinkElement</code> and
- <code>HTMLScriptElement</code> interfaces. [[SRI]]</p>
-</section>
- 
-<!-- Webmention -->
-<section>
-<h3><a href="https://www.w3.org/TR/webmention/">Webmention</a></h3>
-<p>This specification defines a mechanism to notify a URL that it has been mentioned.
-It adds the <code>webmention</code> value for the <code>rel</code> attribute of links. [[webmention]]</p>
-</section>
- 
- </section>
- <section>
- 
-<h2 tabindex="-1" id="WDs">W3C Working Drafts that extend HTML</h2>
- 
- 
-<!-- ARIA in HTML -->
-<section>
-<h3><a href="https://www.w3.org/TR/html-aria/">ARIA in HTML</a></h3>
-<div>
-<p class="inline">This specification defines conformance requirements for the use of the
- <code>role</code> and </p>
-<details>
- <summary>The various <code>aria-</code>* attributes</summary>
- <ul>
-<li><code>aria-activedescendant</code></li>
-<li><code>aria-atomic</code></li>
-<li><code>aria-autocomplete</code></li>
-<li><code>aria-busy</code> (state)</li>
-<li><code>aria-checked</code> (state)</li>
-<li><code>aria-controls</code></li>
-<li><code>aria-current</code></li>
-<li><code>aria-describedby</code></li>
-<li><code>aria-disabled</code> (state)</li>
-<li><code>aria-dropeffect</code></li>
-<li><code>aria-expanded</code> (state)</li>
-<li><code>aria-flowto</code></li>
-<li><code>aria-grabbed</code> (state)</li>
-<li><code>aria-haspopup</code></li>
-<li><code>aria-hidden</code> (state)</li>
-<li><code>aria-invalid</code> (state)</li>
-<li><code>aria-keyshortcuts</code></li>
-<li><code>aria-label</code></li>
-<li><code>aria-labelledby</code></li>
-<li><code>aria-level</code></li>
-<li><code>aria-live</code></li>
-<li><code>aria-modal</code></li>
-<li><code>aria-multiline</code></li>
-<li><code>aria-multiselectable</code></li>
-<li><code>aria-orientation</code></li>
-<li><code>aria-owns</code></li>
-<li><code>aria-placeholder</code></li>
-<li><code>aria-posinset</code></li>
-<li><code>aria-pressed</code> (state)</li>
-<li><code>aria-selected.</code></li>
-<li><code>aria-readonly</code></li>
-<li><code>aria-relevant</code></li>
-<li><code>aria-required</code></li>
-<li><code>aria-selected</code> (state)</li>
-<li><code>aria-pressed.</code></li>
-<li><code>aria-setsize</code></li>
-<li><code>aria-sort</code></li>
-<li><code>aria-valuemax</code></li>
-<li><code>aria-valuemin</code></li>
-<li><code>aria-valuenow</code></li>
-<li><code>aria-valuetext</code></li>
- </ul></details>
-<p class="inline"> from [[wai-aria-1.1]] on HTML elements. [[html-aria]]</p>
-</div>
-</section>
-
-<!-- Beacon API -->
-<section>
-<h3><a href="https://www.w3.org/TR/beacon">Beacon API</a></h3>
-<p>Beacon API extends the <code>Navigator</code> interface, adding a <code>sendBeacon</code> method
-to send a simple message to analytics and similar services. [[beacon]]</p>
-</section>
-
-<!-- Content Security Policy -->
-<section>
-<h3><a href="https://www.w3.org/TR/CSP3/">Content Security Policy Level 3</a></h3>
-<p>This document defines a mechanism by to control the resources a particular page can fetch or execute,
-as well as a number of security-relevant policy decisions.
- It introduces an HTTP header <code>Content-Security-Policy</code> which can be used as a value for
- the <code>meta</code> element's <code>http-equiv</code> attribute, along with parameters to be used in
- the corresponding <code>content</code> attribute, that effect navigation and the use of resources
- external to the page. [[CSP3]]</p>
-</section>
-
-
-<!-- HTML Media Capture -->
-<section>
-<h3><a href="https://www.w3.org/TR/html-media-capture/">HTML Media Capture</a></h3>
-<p>The HTML Media Capture specification defines an HTML form extension that
-facilitates user access to a device's media capture mechanism, such as a camera, or microphone,
-from within a file upload control. [[html-media-capture]]</p>
-</section>
-
-<!-- Microdata -->  
-<section>
-  <h3><a href="https://www.w3.org/TR/microdata/">Microdata</a></h3>
-  <p>This specification defines several global attributes for HTML, to add machine-parseable semantics
-    to HTML content, in a similar way to RDFa but with less power and expressivity. [[microdata]]</p>
-</section>
-
-<!-- Preload -->
-<section>
-<h3><a href="https://www.w3.org/TR/preload/">Preload</a></h3>
-<p>This specification defines a <code>preload</code> keyword as a value of the <code>rel</code> attribute 
-for links. The keyword provides a declarative fetch primitive that initiates an early fetch
-and separates fetching from resource execution. [[preload]]</p>
-</section>
-
-<!-- Presentation API -->
-<section>
-<h3><a href="https://www.w3.org/TR/presentation-api/">Presentation API</a></h3>
-<p>This specification defines an API to enable web content to access external presentation-type displays
- and use them for presenting web content. It extends the <code>Navigator</code> interface. [[presentation-api]]</p>
-</section>
-
-<! -- Public Identifiers for Integrity Resolution in xHTML -->
-<section>
-<h3><a href="https://www.w3.org/TR/xhtml-pubid/">Public Identifiers for 
-Entity Resolution in XHTML</a></h3>
-<p>Merging the content of this specification directly into HTML is now tracked as
- <a href="https://github.com/w3c/html/issues/259">HTML Issue #259</a>.</p>
-<p>This document adds the additional public identifier
- <code>-//W3C//ENTITIES HTML MathML Set//EN//XML</code> for XHTML user agents,
-and causes the HTML character entity definitions to be loaded by explicitly referencing
-the set of definitions that is used by HTML. [[xhtml-pubid]]</p>
-</section>
-
-<!-- Referrer Policy -->
-<section>
-<h3><a href="https://www.w3.org/TR/referrer-policy/">Referrer Policy</a></h3>
-<p>This document describes how an author can set a referrer policy for documents they create,
-and the impact of such a policy on the Referer HTTP header for outgoing requests and navigations. [[referrer-policy]]</p>
-</section>
-
-<!-- Resource Hints -->
-<section>
-<h3><a href="https://www.w3.org/TR/resource-hints/">Resource Hints</a></h3>
-<p>This specification defines the <code>dns-prefetch</code>, <code>preconnect</code>, <code>prefetch</code>,
-and <code>prerender</code> values of the <code>rel</code> attribute for links 
-(<code>&lt;link&gt;</code>).
-These primitives enable the developer, and the server generating or delivering the resources,
-to assist the user agent decide which origins it should connect to,
-and which resources it should fetch and preprocess to improve page performance. [[resource-hints]]</p>
-</section>
-</section>
-
- <section>
- <h2 tabindex="-1" id="WDs">Other documents that extend HTML</h2>
- 
-<!-- HTTP Client Hints -->
-<section>
-<h3><a href="http://httpwg.org/http-extensions/client-hints.html#accept-ch">HTTP Client Hints</a> (IETF)</h3>
-<p>This experimental HTTP extension defines a set of new request header fields that allow the client
-to perform proactive content negotiation (per Section 3.4.1 of [[RFC7231]])
-by indicating a list of device and agent specific preferences, 
-through a mechanism similar to the Accept header field which is used to indicate preferred response formats.
-It extends HTML by allowing the values to be used in a <code>&lt;meta http-equiv=…</code> element.</p>
-
-  </section>
-
-</section>
-
-<section>
-  <h2>Acknowledgements</h2>
-
-<p>Thanks are due to the various editors of specifications mentioned here, and to the editors past and present of HTML. In addition, the editors would like to thank the following for specific contributions to this document:</p>
-
-<p>
- Ade Bateman,
- Eric Prud'hommeaux,
- Matt Garrish,
- Paul Cotton
-</p>
-
-</section>
-
-<!-- Template for another spec
-<section>
-<h3><a href="https://www.w3.org/TR/"></a></h3>
-<p> Extends the <code>Navigator</code> interface, adding a method to [[]]</p>
-</section>
--->
-
-</body>
+  <body>
+    <section id="abstract">
+      <p>
+        This document used to conformance for HTML, such as change to the
+        processing requirements of elements, attributes, attribute values, or
+        interface APIs.
+      </p>
+      <p class="rednote">
+        Work on this document is discontinued. Please consult the list of
+        commits to the HTML spec to see what's new instead.
+      </p>
+    </section>
+  </body>
 </html>
